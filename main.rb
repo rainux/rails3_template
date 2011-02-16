@@ -6,13 +6,13 @@ run "bundle install"
 
 plugin 'asset_packager', :git => 'git://github.com/sbecker/asset_packager.git'
 
-application  <<-GENERATORS
-config.generators do |g|
-  g.template_engine :haml
-  g.test_framework  :rspec, :fixture => true, :views => false
-  g.integration_tool :rspec, :fixture => true, :views => true
-  g.fixture_replacement :factory_girl, :dir => "spec/support/factories"
-end
+application <<-GENERATORS
+  config.generators do |g|
+      g.template_engine :haml
+      g.test_framework  :rspec, :fixture => true, :views => false
+      g.integration_tool :rspec, :fixture => true, :views => true
+      g.fixture_replacement :factory_girl, :dir => "spec/support/factories"
+    end
 GENERATORS
 
 generate "rspec:install"
