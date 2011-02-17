@@ -8,7 +8,7 @@ This template is heavily dependent on wget so, if you're using a Mac, you will n
 
 Since Github started forcing SSL in all its URLs, we need to download the template file separately:
 
-<pre><code>wget --no-check-certificate https://github.com/dcrec1/rails3_template/raw/master/main.rb -O /tmp/rails3_template.rb</pre></code>
+<pre><code>wget --no-check-certificate https://github.com/rainux/rails3_template/raw/master/main.rb -O /tmp/rails3_template.rb</pre></code>
 
 Then whenever you want to create a new project, just do:
 
