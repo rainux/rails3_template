@@ -19,14 +19,19 @@ gem 'inploy', '>= 1.6.8'
 gem 'json'
 
 group :development do
+  gem 'irbtools', :require => nil
+  gem 'irbtools-more', :require => nil
+  gem 'irb_rocket', :require => nil
+  gem 'annotate', :require => nil
+  gem 'capistrano', :require => nil
   gem 'autotest'
   gem 'autotest-notification'
-  gem 'rails3-generators', :git => 'git://github.com/indirect/rails3-generators.git'
+  gem 'rails3-generators'
   gem 'metric_fu', '>= 1.5.1'
 end
 
 group :development, :test do
-  gem 'evergreen'
+  gem 'awesome_print', :require => 'ap'
   gem 'factory_girl_rails'
   gem 'rspec-rails', '>= 2.0.1'
   gem 'evergreen', :require => 'evergreen/rails'
