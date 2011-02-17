@@ -1,4 +1,12 @@
 run "rm -Rf .gitignore README public/index.html public/javascripts/* test app/views/layouts/*"
+run "wget --no-check-certificate 'https://github.com/rainux/rails3_template/raw/master/gitignore' -O .gitignore"
+git :init
+git :add => '.gitignore'
+git :commit => "-am 'Initial commit'"
+run 'cp config/database.yml config/database.yml.example'
+git :add => '.'
+git :add => '-f public/stylesheets/.gitkeep'
+git :commit => "-am 'Rails 3 app generated'"
 
 run "wget --no-check-certificate 'https://github.com/rainux/rails3_template/raw/master/Gemfile' -O Gemfile"
 
@@ -32,7 +40,6 @@ append_file "config/compass.rb", "require 'lemonade'"
 run "rm public/stylesheets/*"
 
 run "wget --no-check-certificate 'https://github.com/rails/jquery-ujs/raw/master/src/rails.js' -O public/javascripts/rails.js"
-run "wget --no-check-certificate 'https://github.com/rainux/rails3_template/raw/master/gitignore' -O .gitignore"
 run "wget --no-check-certificate 'https://github.com/rainux/rails3_template/raw/master/screen.scss' -O app/stylesheets/screen.scss"
 run "wget --no-check-certificate 'https://github.com/rainux/rails3_template/raw/master/print.scss' -O app/stylesheets/print.scss"
 run "wget --no-check-certificate 'https://github.com/rainux/rails3_template/raw/master/application.html.haml' -O app/views/layouts/application.html.haml"
@@ -74,9 +81,8 @@ run "mkdir -p app/coffeescripts spec/javascripts spec/javascripts/templates tmp"
 run "touch tmp/.gitkeep"
 run "chmod u+x build.sh"
 
-git :init
 git :add => '.'
 git :add => 'public/javascripts/rails.js --force'
-git :commit => '-am "Initial commit"'
+git :commit => '-am "Gems installed"'
 
 puts "SUCCESS!"
