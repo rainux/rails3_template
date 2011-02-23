@@ -51,7 +51,9 @@ group :test do
   gem 'remarkable', '>= 4.0.0.alpha4'
   gem 'remarkable_activemodel', '>= 4.0.0.alpha4'
   gem 'remarkable_activerecord', '>= 4.0.0.alpha4'
-  gem 'capybara-envjs'
+  platforms :mri_18 do
+    gem 'capybara-envjs'
+  end
   gem 'database_cleaner', '>= 0.5.0'
 end
 
