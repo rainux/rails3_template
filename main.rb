@@ -24,8 +24,7 @@ application <<-GENERATORS
 GENERATORS
 
 generate "rspec:install"
-generate "cucumber:install --capybara --rspec --spork"
-generate "pickle --path --email"
+generate "steak:install"
 generate "friendly_id"
 generate "formtastic:install"
 generate "devise:install"
@@ -43,7 +42,6 @@ run "wget --no-check-certificate 'https://github.com/rainux/rails3_template/raw/
 run "wget --no-check-certificate 'https://github.com/rainux/rails3_template/raw/master/print.scss' -O app/stylesheets/print.scss"
 run "wget --no-check-certificate 'https://github.com/rainux/rails3_template/raw/master/application.html.haml' -O app/views/layouts/application.html.haml"
 run "wget --no-check-certificate 'https://github.com/rainux/rails3_template/raw/master/factory_girl.rb' -O features/support/factory_girl.rb"
-run "wget --no-check-certificate 'https://github.com/rainux/rails3_template/raw/master/devise_steps.rb' -O features/step_definitions/devise_steps.rb"
 run "wget --no-check-certificate 'https://github.com/rainux/rails3_template/raw/master/remarkable.rb' -O spec/support/remarkable.rb"
 run "wget --no-check-certificate 'https://github.com/rainux/rails3_template/raw/master/users.rb' -O spec/support/factories/users.rb"
 run "wget --no-check-certificate 'https://github.com/rainux/rails3_template/raw/master/build.rake' -O lib/tasks/build.rake"
