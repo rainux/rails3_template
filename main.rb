@@ -19,7 +19,7 @@ plugin 'asset_packager', :git => 'git://github.com/sbecker/asset_packager.git'
 
 application <<-GENERATORS
   config.generators do |g|
-      g.template_engine :haml
+      g.template_engine :slim
       g.test_framework  :rspec, :fixture => true, :views => false
       g.integration_tool :rspec, :fixture => true, :views => true
       g.fixture_replacement :factory_girl, :dir => "spec/support/factories"
@@ -43,7 +43,7 @@ run "rm public/stylesheets/*"
 run "wget --no-check-certificate 'https://github.com/rails/jquery-ujs/raw/master/src/rails.js' -O public/javascripts/rails.js"
 run "cp #{source.join('screen.sass')} app/stylesheets/screen.sass"
 run "cp #{source.join('print.sass')} app/stylesheets/print.sass"
-run "cp #{source.join('application.html.haml')} app/views/layouts/application.html.haml"
+run "cp #{source.join('application.html.slim')} app/views/layouts/application.html.slim"
 run "cp #{source.join('factory_girl.rb')} features/support/factory_girl.rb"
 run "cp #{source.join('remarkable.rb')} spec/support/remarkable.rb"
 run "cp #{source.join('users.rb')} spec/support/factories/users.rb"
