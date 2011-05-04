@@ -1,5 +1,8 @@
+require 'pathname'
+source = Pathname.new(File.dirname(__FILE__))
+
 run "rm -Rf .gitignore README public/index.html public/javascripts/* test app/views/layouts/*"
-run "wget --no-check-certificate 'https://github.com/rainux/rails3_template/raw/master/gitignore' -O .gitignore"
+run "cp #{source.join('gitignore')} .gitignore"
 git :init
 git :add => '.gitignore'
 git :commit => "-am 'Initial commit'"
@@ -8,7 +11,7 @@ git :add => '.'
 git :add => '-f public/stylesheets/.gitkeep'
 git :commit => "-am 'Rails 3 app generated'"
 
-run "wget --no-check-certificate 'https://github.com/rainux/rails3_template/raw/master/Gemfile' -O Gemfile"
+run "cp #{source.join('Gemfile')} ."
 
 run "bundle install"
 
@@ -38,23 +41,23 @@ append_file "config/compass.rb", "require 'lemonade'"
 run "rm public/stylesheets/*"
 
 run "wget --no-check-certificate 'https://github.com/rails/jquery-ujs/raw/master/src/rails.js' -O public/javascripts/rails.js"
-run "wget --no-check-certificate 'https://github.com/rainux/rails3_template/raw/master/screen.scss' -O app/stylesheets/screen.scss"
-run "wget --no-check-certificate 'https://github.com/rainux/rails3_template/raw/master/print.scss' -O app/stylesheets/print.scss"
-run "wget --no-check-certificate 'https://github.com/rainux/rails3_template/raw/master/application.html.haml' -O app/views/layouts/application.html.haml"
-run "wget --no-check-certificate 'https://github.com/rainux/rails3_template/raw/master/factory_girl.rb' -O features/support/factory_girl.rb"
-run "wget --no-check-certificate 'https://github.com/rainux/rails3_template/raw/master/remarkable.rb' -O spec/support/remarkable.rb"
-run "wget --no-check-certificate 'https://github.com/rainux/rails3_template/raw/master/users.rb' -O spec/support/factories/users.rb"
-run "wget --no-check-certificate 'https://github.com/rainux/rails3_template/raw/master/build.rake' -O lib/tasks/build.rake"
-run "wget --no-check-certificate 'https://github.com/rainux/rails3_template/raw/master/bootstrap.rake' -O lib/tasks/bootstrap.rake"
-run "wget --no-check-certificate 'https://github.com/rainux/rails3_template/raw/master/build.sh' -O build.sh"
-run "wget --no-check-certificate 'https://github.com/rainux/rails3_template/raw/master/overlay.png' -O public/images/overlay.png"
-run "wget --no-check-certificate 'https://github.com/rainux/rails3_template/raw/master/newrelic.yml' -O config/newrelic.yml"
-run "wget --no-check-certificate 'https://github.com/rainux/rails3_template/raw/master/hoptoad.rb' -O config/initializers/hoptoad.rb"
-run "wget --no-check-certificate 'https://github.com/rainux/rails3_template/raw/master/rails_admin.rb' -O config/initializers/rails_admin.rb"
-run "wget --no-check-certificate 'https://github.com/rainux/rails3_template/raw/master/htaccess' -O public/.htaccess"
-run "wget --no-check-certificate 'https://github.com/rainux/rails3_template/raw/master/asset_packages.yml' -O config/asset_packages.yml"
-run "wget --no-check-certificate 'https://github.com/rainux/rails3_template/raw/master/evergreen.rb' -O config/evergreen.rb"
-run "wget --no-check-certificate 'https://github.com/rainux/rails3_template/raw/master/grid.png' -O public/images/grid.png"
+run "cp #{source.join('screen.scss')} app/stylesheets/screen.scss"
+run "cp #{source.join('print.scss')} app/stylesheets/print.scss"
+run "cp #{source.join('application.html.haml')} app/views/layouts/application.html.haml"
+run "cp #{source.join('factory_girl.rb')} features/support/factory_girl.rb"
+run "cp #{source.join('remarkable.rb')} spec/support/remarkable.rb"
+run "cp #{source.join('users.rb')} spec/support/factories/users.rb"
+run "cp #{source.join('build.rake')} lib/tasks/build.rake"
+run "cp #{source.join('bootstrap.rake')} lib/tasks/bootstrap.rake"
+run "cp #{source.join('build.sh')} build.sh"
+run "cp #{source.join('overlay.png')} public/images/overlay.png"
+run "cp #{source.join('newrelic.yml')} config/newrelic.yml"
+run "cp #{source.join('hoptoad.rb')} config/initializers/hoptoad.rb"
+run "cp #{source.join('rails_admin.rb')} config/initializers/rails_admin.rb"
+run "cp #{source.join('htaccess')} public/.htaccess"
+run "cp #{source.join('asset_packages.yml')} config/asset_packages.yml"
+run "cp #{source.join('evergreen.rb')} config/evergreen.rb"
+run "cp #{source.join('grid.png')} public/images/grid.png"
 
 create_file 'config/deploy.rb', <<-DEPLOY
 application = '#{app_name}'
