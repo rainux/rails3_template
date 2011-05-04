@@ -57,6 +57,7 @@ run "cp #{source.join('rails_admin.rb')} config/initializers/rails_admin.rb"
 run "cp #{source.join('htaccess')} public/.htaccess"
 run "cp #{source.join('asset_packages.yml')} config/asset_packages.yml"
 run "cp #{source.join('grid.png')} public/images/grid.png"
+run "cp #{source.join('Guardfile')} ."
 
 create_file 'config/deploy.rb', <<-DEPLOY
 application = '#{app_name}'

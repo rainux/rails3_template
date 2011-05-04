@@ -24,8 +24,6 @@ group :development do
   gem 'irb_rocket', :require => nil
   gem 'annotate', :require => nil
   gem 'capistrano', :require => nil
-  gem 'autotest'
-  gem 'autotest-notification'
   gem 'rails3-generators'
   gem 'metric_fu', '>= 1.5.1'
 end
@@ -51,6 +49,21 @@ group :test do
   gem 'remarkable_activemodel', '>= 4.0.0.alpha4'
   gem 'remarkable_activerecord', '>= 4.0.0.alpha4'
   gem 'database_cleaner', '>= 0.5.0'
+
+  gem 'guard'
+  gem 'guard-bundler'
+  gem 'guard-spork'
+  gem 'guard-rspec'
+end
+
+group :linux do
+  gem 'rb-inotify'
+  gem 'libnotify'
+end
+
+group :darwin do
+  gem 'rb-fsevent'
+  gem 'growl'
 end
 
 group :production do
