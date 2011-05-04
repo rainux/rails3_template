@@ -56,7 +56,6 @@ run "cp #{source.join('hoptoad.rb')} config/initializers/hoptoad.rb"
 run "cp #{source.join('rails_admin.rb')} config/initializers/rails_admin.rb"
 run "cp #{source.join('htaccess')} public/.htaccess"
 run "cp #{source.join('asset_packages.yml')} config/asset_packages.yml"
-run "cp #{source.join('evergreen.rb')} config/evergreen.rb"
 run "cp #{source.join('grid.png')} public/images/grid.png"
 
 create_file 'config/deploy.rb', <<-DEPLOY

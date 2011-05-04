@@ -36,7 +36,6 @@ group :development, :test do
   gem 'rspec-rails', '>= 2.0.1'
   gem 'steak'
   gem 'capybara', '>= 0.3.6'
-  gem 'evergreen', :require => 'evergreen/rails'
   platforms :mri_18 do
     gem 'ruby-debug'
   end
@@ -51,9 +50,6 @@ group :test do
   gem 'remarkable', '>= 4.0.0.alpha4'
   gem 'remarkable_activemodel', '>= 4.0.0.alpha4'
   gem 'remarkable_activerecord', '>= 4.0.0.alpha4'
-  platforms :mri_18 do
-    gem 'capybara-envjs'
-  end
   gem 'database_cleaner', '>= 0.5.0'
 end
 
